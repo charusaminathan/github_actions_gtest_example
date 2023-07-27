@@ -1,5 +1,5 @@
 
-#include "gtest"
+#include <gtest/gtest.h>
 class a(){
     b*ptr;
     public:
