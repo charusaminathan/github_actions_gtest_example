@@ -1,31 +1,113 @@
 
-#include <gtest/gtest.h>
-class a(){
-    b*ptr;
+
+#include "gtest/gtest.h"
+
+class C{};
+
+class B{
+
+    C* ptr;
+
     public:
-    a(b*adddressobject): ptr(addressofobject){
+
+    B(C* addressOfObject): ptr{addressOfObject}{
+
+ 
 
     }
-Bool operation(){
-    return true;
-}
+
 };
-class b();
-c*ptr;
+
+ 
+
+class A{
+
+    B* ptr;
+
     public:
-    c(b*adddressobject): ptr(addressofobject){
+
+    A(B* addressOfObject): ptr{addressOfObject}{
+
+ 
 
     }
 
-class c();
-a*ptr;
-    public:
-    a(b*adddressobject): ptr(addressofobject){
+    bool  operation(){
+
+        return true;
 
     }
-TEST("testfixturetestsuit", "operationtest"){
-    c cobj;
-    b bobj(&cobj);
-    a obj(&bobj);
-    ASSERT_FALSE(obj.operetion());
+
+};
+
+ 
+
+/*TEST(TestFixtureTestSuite,OperationTrueTest){
+
+    //Arrange
+
+    C cObj;
+
+    B bObj(&cObj);
+
+    A obj(&bObj);
+
+    //Act and Assert
+
+    ASSERT_TRUE(obj.operation());
+
+}
+
+TEST(TestFixtureTestSuite,OperationFalseTest){
+
+    //Arrange
+
+    C cObj;
+
+    B bObj(&cObj);
+
+    A obj(&bObj);
+
+    //Act and Assert
+
+    ASSERT_FALSE(obj.operation());
+
+
+
+
+
+}*/
+class Testfixturetestsuit:public Testing::Test{
+Protected:
+A* aptr;
+B* bptr;
+C* cptr;
+}
+Testfixturetestsuite(){
+
+}
+~Testfixturetestsuite(){
+
+}
+void setup(){
+    //ARRANGE
+    this->*cptr=new C();
+    this->*bptr=new B(CPtr);
+     this->*aptr=new A(bPtr);
+
+}
+void Teardown(){
+    delete cPtr;
+    delete bPtr;
+    delete aPtr;
+
+};
+Test_F(TestFixtureTestsuit, operationtruetest){
+    //Act and Assert
+    ASSERT_TRUE(aptr->operation());
+}
+Test_F(TestFixtureTestsuit, operationfalsetest){
+    //Act and Assert
+    ASSERT_FALSE(aptr->operation());
+
 }
